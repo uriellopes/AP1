@@ -1,5 +1,5 @@
 #include <string>
-#include <ctime>
+#include "tempo.h"
 
 using namespace std;
 
@@ -8,6 +8,6 @@ class Automovel {
         string marca;
         float preco;
         int chassi;
-        tm data_criacao;
+        Tempo data_criacao;
     public:
 };
