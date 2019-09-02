@@ -1,7 +1,7 @@
 class Tempo {
     private:
-    int dia;
-    int mes;
-    int ano;
+        int dia;
+        int mes;
+        int ano;
     public:
 };
