@@ -1,4 +1,4 @@
-//g++ -Wall -pedantic -g -O0 -o exec main.cpp concessionaria.cpp tempo.cpp
+//g++ -Wall -pedantic -g -O0 -o exec main.cpp concessionaria.cpp automovel.cpp tempo.cpp
 #include <iostream>
 #include <vector>
 #include "concessionaria.h"
@@ -29,12 +29,16 @@ int main() {
     std::cin >> mes;
     std::cin >> ano;
 
-    std::cout << validarData(dia, mes, ano) << std::endl;
-    std::cout << "teste" << std::endl;
+    Tempo data = Tempo(dia, mes, ano);
 
-    Tempo data = Tempo(dia,mes,ano);
+    Automovel c = Automovel("Fiat", 20000.00, 219301293, Tempo(dia, mes, ano));
 
-    std::cout << data << std::endl;
+    // std::cout << validarData(dia, mes, ano) << std::endl;
+    // std::cout << "teste" << std::endl;
+
+    // Tempo data = Tempo(dia,mes,ano);
+
+    // std::cout << data << std::endl;
 
 
     // vector<Concessionaria> concessionarias;
