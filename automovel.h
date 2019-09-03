@@ -1,11 +1,9 @@
 #include "tempo.h"
 #include <string>
 
-using namespace std;
-
 class Automovel {
     private:
-        string marca;
+        std::string marca;
         float preco;
         int chassi;
         Tempo data_criacao;

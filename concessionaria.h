@@ -3,11 +3,11 @@
 
 class Concessionaria {
     private:
-        string nome;
+        std::string nome;
         int cnpj;
         int qtd_estoque;
     public:
-        Concessionaria(string nome, int cnpj);
+        Concessionaria(std::string nome, int cnpj);
         friend std::ostream& operator<< (std::ostream &o, Concessionaria const c);
         ~Concessionaria();
 };

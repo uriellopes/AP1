@@ -45,7 +45,6 @@ Tempo::Tempo(int d, int m, int a) {
 
     //Checa se o ano atual é bissexto e se a data ja passou de fevereiro para adicinar 1 dia caso verdadeiro
     if( checarBissexto(a) && m > 2) {
-        std::cout << "é bissexto" << std::endl;
         qtd_dias += 1;
     }    
 }
