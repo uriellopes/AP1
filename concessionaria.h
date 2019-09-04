@@ -13,5 +13,6 @@ class Concessionaria {
         friend std::ostream& operator<< (std::ostream &o, Concessionaria const c);
         void adicionarCarro( Automovel c );
         void showCarros();
+        std::string getNome();
         ~Concessionaria();
 };

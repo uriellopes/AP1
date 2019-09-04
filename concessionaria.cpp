@@ -19,10 +19,15 @@ void Concessionaria::adicionarCarro( Automovel c) {
 
 void Concessionaria::showCarros() {
     int j = 0;
+    std::cout << "Lista de Carros" << std::endl;
     for(std::vector<Automovel>::iterator i = carros.begin(); i != carros.end(); i++ ) {
         ++j;
-        std::cout << "Carro " << j << std::endl << *i << std::endl;
+        std::cout << "Carro " << j << std::endl << *i;
     }
+}
+
+std::string Concessionaria::getNome() {
+    return nome;
 }
 
 Concessionaria::~Concessionaria() {
