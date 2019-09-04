@@ -99,3 +99,45 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
 
     pressToCont();
 }
+
+void showMenu(std::vector<Concessionaria> &concessionarias) {
+    int escolha;
+    bool error = false;
+
+    do {
+        clear();
+        if ( error ) {
+            error = false;
+            std::cout << "==============================" << std::endl;
+            std::cout << std::endl << "   Digite uma opcao valida!   " << std::endl << std::endl;
+            std::cout << "==============================" << std::endl;
+        }
+        std::cout << "Escolha uma das seguintes opcoes: " << std::endl << std::endl;
+        std::cout << "1 - Criar nova Concessionaria" << std::endl;
+        int opcoes = 1;
+        for(unsigned int i = 0; i < concessionarias.size(); i++ ) {
+            std::cout << i + 2 << " - Selecionar Concessionaria " << concessionarias[i].getNome() << std::endl;
+            opcoes++;
+        }
+
+        std::cout << std::endl;
+        std::cout << "0 - Sair" << std::endl << std::endl;
+        std::cout << "Opcao: ";
+        std::cin >> escolha;
+
+        if( escolha < 0 || escolha > opcoes ) {        
+            error = true;
+        } else {
+            switch (escolha)
+            {
+            case 0:
+                break;
+            case 1:
+                novaConcessionaria(concessionarias);
+                break;
+            default:
+                break;
+            }
+        }
+    } while( escolha != 0);
+}
