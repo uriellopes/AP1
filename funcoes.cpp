@@ -78,7 +78,7 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
 
     std::cout << "=======================================" << std::endl;
     std::cout << "     1 - Criar nova concessionaria" << std::endl;
-    std::cout << "=======================================" << std::endl;
+    std::cout << "=======================================" << std::endl << std::endl;
 
     std::cout << "Digite o nome da nova concessionaria: ";
     std::cin.ignore();
@@ -122,6 +122,63 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
     pressToCont();
 }
 
+//Funcao para selecionar uma concessionaria
+void selecionarConcessionaria(Concessionaria &c) {
+    std::string input;
+    int escolha;
+    bool sair = false;
+    bool error = false;
+    do {
+        clear();
+
+        std::cout << "===================================" << std::endl;
+        std::cout << c;
+        std::cout << "===================================" << std::endl << std::endl;
+
+        std::cout << "Escolha uma das seguintes opcoes: " << std::endl << std::endl;
+
+        std::cout << "[1] - Adicionar novo carro" << std::endl;
+        std::cout << "[2] - Listar carros cadastrados" << std::endl;
+        std::cout << "[3] - Aumentar preco de todos os carros em %" << std::endl;
+        std::cout << "[4] - Listar carros produzidos ha menos de 90 dias" << std::endl;
+        std::cout << std::endl;
+        std::cout << "[0] - Sair" << std::endl;
+
+        std::cout << std::endl;
+        if ( error ) {
+            error = false;
+            std::cout << "**Digite uma opcao valida!**" << std::endl;
+        }
+        std::cout << "Opcao: ";
+        std::cin >> input;
+
+        if( checarDigito(input)) {
+            escolha = std::stoi (input, nullptr);
+            
+            switch (escolha) {
+                case 0:
+                    sair = true;
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    error = true;
+                    break;
+            }
+
+        } else {
+            error = true;
+        }
+    } while (!sair);
+}
+
+//Funcao que mostra o menu principal do codigo
 void showMenu(std::vector<Concessionaria> &concessionarias) {
     std::string input;
     int escolha;
@@ -130,37 +187,41 @@ void showMenu(std::vector<Concessionaria> &concessionarias) {
 
     do {
         clear();
-        if ( error ) {
-            error = false;
-            std::cout << "==============================" << std::endl;
-            std::cout << std::endl << "   Digite uma opcao valida!   " << std::endl << std::endl;
-            std::cout << "==============================" << std::endl;
-        }
         std::cout << "Escolha uma das seguintes opcoes: " << std::endl << std::endl;
-        std::cout << "1 - Criar nova Concessionaria" << std::endl;
+        std::cout << "[1] - Criar nova Concessionaria" << std::endl;
         int opcoes = 1;
         for(unsigned int i = 0; i < concessionarias.size(); i++ ) {
-            std::cout << i + 2 << " - Selecionar Concessionaria " << concessionarias[i].getNome() << std::endl;
+            std::cout << "[" << i + 2 << "] - Selecionar Concessionaria " << concessionarias[i].getNome() << std::endl;
             opcoes++;
         }
 
         std::cout << std::endl;
-        std::cout << "0 - Sair" << std::endl << std::endl;
+        std::cout << "[0] - Sair" << std::endl << std::endl;
+
+        if ( error ) {
+            error = false;
+            std::cout <<"**Digite uma opcao valida!**" << std::endl;
+        }
         std::cout << "Opcao: ";
         std::cin >> input;
 
         if( checarDigito(input)) {
             escolha = std::stoi (input, nullptr);
-            switch (escolha) {
-            case 0:
-                sair = true;
-                break;
-            case 1:
-                novaConcessionaria(concessionarias);
-                break;
-            default:
+
+            if( escolha >= 0 && escolha <= opcoes ) {
+                switch (escolha) {
+                case 0:
+                    sair = true;
+                    break;
+                case 1:
+                    novaConcessionaria(concessionarias);
+                    break;
+                default:
+                    selecionarConcessionaria(concessionarias[escolha - 2]);
+                    break;
+                }
+            } else {
                 error = true;
-                break;
             }   
         } else {
             error = true;
