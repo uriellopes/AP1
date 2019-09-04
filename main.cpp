@@ -23,6 +23,25 @@ bool validarData(int d, int m, int a) {
 
 int main() {
 
+    std::vector<Concessionaria> concessionarias;
+
+    concessionarias.push_back(Concessionaria("Concessionaria 1", 12121));
+    // concessionarias.push_back(Concessionaria("Concessionaria 2", 2323));
+    // concessionarias.push_back(Concessionaria("Concessionaria 3", 1223121));
+
+    concessionarias[0].adicionarCarro(Automovel("Fiat", 20000.00, "219301293", Tempo(2, 3, 2019)));
+    std::cout << concessionarias[0] << std::endl;
+    concessionarias[0].showCarros();
+
+
+    // for(std::vector<Concessionaria>::iterator i = concessionarias.begin(); i != concessionarias.end(); i++ ) {
+    //     std::cout << *i << std::endl;
+    // }
+
+    // for(unsigned int i = 0; i < concessionarias.size(); i++ ) {
+    //     std::cout << concessionarias[i] << std::endl;
+    // }
+
     // int dia, mes, ano;
 
     // std::cin >> dia;
