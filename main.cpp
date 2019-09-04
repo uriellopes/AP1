@@ -7,8 +7,10 @@ int main() {
     //Vector para armazenar as concessionarias
     std::vector<Concessionaria> concessionarias;
 
+    //Adicionar informacoes iniciais no codigo para testes
     addInfo(concessionarias);
 
+    //Mostrar menu principal
     showMenu(concessionarias);
 
     return 0;
