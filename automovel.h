@@ -1,14 +1,14 @@
-#include "tempo.h"
 #include <string>
+#include "tempo.h"
 
 class Automovel {
     private:
         std::string marca;
         float preco;
-        int chassi;
+        std::string chassi;
         Tempo data_criacao;
     public:
-        Automovel(std::string marca, float preco, int chassi, Tempo data(int d, int m, int a));
+        Automovel(std::string m, float p, std::string c, Tempo d);
         friend std::ostream& operator<< (std::ostream &o, Automovel const a);
         ~Automovel();
 };

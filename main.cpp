@@ -23,15 +23,19 @@ bool validarData(int d, int m, int a) {
 
 int main() {
 
-    int dia, mes, ano;
+    // int dia, mes, ano;
 
-    std::cin >> dia;
-    std::cin >> mes;
-    std::cin >> ano;
+    // std::cin >> dia;
+    // std::cin >> mes;
+    // std::cin >> ano;
 
-    Tempo data = Tempo(dia, mes, ano);
+    // // Tempo data = Tempo(dia, mes, ano);
 
-    Automovel c = Automovel("Fiat", 20000.00, 219301293, Tempo(dia, mes, ano));
+    // Automovel c = Automovel("Fiat", 20000.00, "219301293", Tempo(dia, mes, ano));
+
+    // std::cout << std::endl;
+    // std::cout << c << std::endl;
+    //std::cout << c.data_criacao << std::endl;
 
     // std::cout << validarData(dia, mes, ano) << std::endl;
     // std::cout << "teste" << std::endl;

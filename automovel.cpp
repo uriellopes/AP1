@@ -1,18 +1,22 @@
-#include "automovel.h"
 #include <iostream>
+#include <iomanip>
+#include "automovel.h"
 
-Automovel::Automovel(std::string m, float p, int c, Tempo data(int d, int m, int a)) {
+//Contrutor da Classe
+Automovel::Automovel(std::string m, float p, std::string c, Tempo d) {
     marca = m;
     preco = p;
     chassi = c;
-    // data_criacao = data;
+    data_criacao = d;
 }
 
-// std::ostream& operator<< (std::ostream &o, Automovel const a) {
-//     o << "Marca: " << a.marca << std::endl << "Preço: " << a.preco << std::endl << "Chassi: " << a.chassi << "Data de criação: " << a.data_criacao << std::endl;
-//     return o;
-// }
+//Sobrecarga do operador <<
+std::ostream& operator<< (std::ostream &o, Automovel const a) {
+    o << "Marca: " << a.marca << std::endl << "Preco: " <<  std::fixed << std::setprecision(2) << a.preco << std::endl << "Chassi: " << a.chassi << std::endl << "Data de criacao: " << a.data_criacao << std::endl;
+    return o;
+}
 
+//Destrutor da Classe
 Automovel::~Automovel() {
 
 }

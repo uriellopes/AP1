@@ -24,6 +24,11 @@ bool checarBissexto(int &ano) {
     return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
 }
 
+//Construtor Padrão
+Tempo::Tempo(){
+
+}
+
 //Construtor da classe Tempo
 Tempo::Tempo(int d, int m, int a) {
     dia = d;
