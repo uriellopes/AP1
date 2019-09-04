@@ -15,6 +15,16 @@ void pressToCont() {
     std::cin.ignore();
 }
 
+bool checarDigito(std::string &input) {
+    for (unsigned int  i = 0; i < input.size(); i++) {
+        if( !isdigit(input[i]) ) {
+            return false;
+            break;
+        }
+    }
+    return true;
+}
+
 //Funçao para checar se o ano inserido é bissexto
 bool checkBissexto(int &ano) {
     return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
@@ -79,12 +89,7 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
         std::cout << "Digite o CNPJ da nova concessionaria ( Digite apenas os numeros ): ";
         std::cin >> input;
 
-        for (unsigned int  i = 0; i < input.size(); i++) {
-            if( !isdigit(input[i]) ) {
-                inputValido = false;
-                break;
-            }
-        }
+        inputValido = checarDigito(input);
 
         if( !inputValido ) {
             std::cout << std::endl;
@@ -118,7 +123,8 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
 }
 
 void showMenu(std::vector<Concessionaria> &concessionarias) {
-    char escolha;
+    std::string input;
+    int escolha;
     bool sair = false;
     bool error = false;
 
@@ -141,18 +147,23 @@ void showMenu(std::vector<Concessionaria> &concessionarias) {
         std::cout << std::endl;
         std::cout << "0 - Sair" << std::endl << std::endl;
         std::cout << "Opcao: ";
-        std::cin >> escolha;
+        std::cin >> input;
 
-        switch (escolha) {
-            case '0':
+        if( checarDigito(input)) {
+            escolha = std::stoi (input, nullptr);
+            switch (escolha) {
+            case 0:
                 sair = true;
                 break;
-            case '1':
+            case 1:
                 novaConcessionaria(concessionarias);
                 break;
             default:
                 error = true;
                 break;
+            }   
+        } else {
+            error = true;
         }
     } while( !sair );
 }
