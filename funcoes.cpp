@@ -10,9 +10,9 @@ void clear() {
 
 //Funcao para pressionar enter para continuar
 void pressToCont() {
-    std::string temp;
     std::cout << "Pressione Enter para continuar...";
-    std::getline(std::cin, temp);
+    std::cin.ignore();
+    std::cin.ignore();
 }
 
 //Funçao para checar se o ano inserido é bissexto
@@ -61,10 +61,10 @@ void addInfo(std::vector<Concessionaria> &concessionarias) {
 void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
     clear();
     std::string nome;
-    std::string cnpj;
-    std::string temp;
-    bool cnpjExiste = false;
-    bool nomeExiste = false;
+    std::string input;
+    long long int cnpj;
+    bool existe = false;
+    bool inputValido;
 
     std::cout << "=======================================" << std::endl;
     std::cout << "     1 - Criar nova concessionaria" << std::endl;
@@ -74,34 +74,52 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
     std::cin.ignore();
     std::getline(std::cin, nome);
 
-    std::cout << "Digite o CNPJ da nova concessionaria: ";
-    std::getline(std::cin, cnpj);
+    do {
+        inputValido = true;
+        std::cout << "Digite o CNPJ da nova concessionaria ( Digite apenas os numeros ): ";
+        std::cin >> input;
+
+        for (unsigned int  i = 0; i < input.size(); i++) {
+            if( !isdigit(input[i]) ) {
+                inputValido = false;
+                break;
+            }
+        }
+
+        if( !inputValido ) {
+            std::cout << std::endl;
+            std::cout << "Digite apenas numeros para um valor valido!!" << std::endl;
+        }        
+
+    } while ( !inputValido );
+
+    cnpj = stoll(input, nullptr, 10);
 
     for(unsigned int i = 0; i < concessionarias.size(); i++ ) {
-        
+        if( concessionarias[i].getCNPJ() == cnpj || nome.compare(concessionarias[i].getNome()) == 0 ) {
+            existe = true;
+            break;
+        }
     }
 
-    if ( cnpjExiste && nomeExiste ) {
-        std::cout << "=======================================" << std::endl;
-        std::cout << "Essa concessionaria ja esta cadastrada!" << std::endl;
-        std::cout << "=======================================" << std::endl;
-    } else if ( !cnpjExiste && nomeExiste ) {
-        std::cout << "======================================================" << std::endl;
-        std::cout << "Ja existe uma concessionaria cadastrada com esse nome!" << std::endl;
-        std::cout << "======================================================" << std::endl;
-    } else if ( cnpjExiste && !nomeExiste ) {
-        std::cout << "======================================================" << std::endl;
-        std::cout << "Ja existe uma concessionaria cadastrada com esse CNPJ!" << std::endl;
-        std::cout << "======================================================" << std::endl;
+    if( existe ) {
+        std::cout << std::endl;
+        std::cout << "==============================================================" << std::endl;
+        std::cout << "Ja existe uma concessionaria cadastrada com esse nome ou cnpj!" << std::endl;
+        std::cout << "==============================================================" << std::endl << std::endl;
     } else {
-        std::cout << "Nova!" << std::endl;
+        concessionarias.push_back(Concessionaria(nome, cnpj));
+        std::cout << std::endl;
+        std::cout << "Concessionaria " << nome << " criada!" << std::endl;
+        std::cout << std::endl;
     }
 
     pressToCont();
 }
 
 void showMenu(std::vector<Concessionaria> &concessionarias) {
-    int escolha;
+    char escolha;
+    bool sair = false;
     bool error = false;
 
     do {
@@ -125,19 +143,16 @@ void showMenu(std::vector<Concessionaria> &concessionarias) {
         std::cout << "Opcao: ";
         std::cin >> escolha;
 
-        if( escolha < 0 || escolha > opcoes ) {        
-            error = true;
-        } else {
-            switch (escolha)
-            {
-            case 0:
+        switch (escolha) {
+            case '0':
+                sair = true;
                 break;
-            case 1:
+            case '1':
                 novaConcessionaria(concessionarias);
                 break;
             default:
+                error = true;
                 break;
-            }
         }
-    } while( escolha != 0);
+    } while( !sair );
 }
