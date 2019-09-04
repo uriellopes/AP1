@@ -19,7 +19,7 @@ int qtdBissexto(int &ano) {
     return ((ano - 1) / 4) - ((ano - 1) / 100) + ((ano - 1) / 400);
 }
 
-//Função para checar se o ano atual é bissexto
+// //Função para checar se o ano atual é bissexto
 bool checarBissexto(int &ano) {
     return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
 }

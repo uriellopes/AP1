@@ -1,7 +1,7 @@
 #include <iostream>
 #include "concessionaria.h"
 
-Concessionaria::Concessionaria(std::string a, int b) {
+Concessionaria::Concessionaria(std::string a, long long int b) {
     nome = a;
     cnpj = b;
     qtd_estoque = 0;
@@ -28,6 +28,10 @@ void Concessionaria::showCarros() {
 
 std::string Concessionaria::getNome() {
     return nome;
+}
+
+long long int Concessionaria::getCNPJ() {
+    return cnpj;
 }
 
 Concessionaria::~Concessionaria() {

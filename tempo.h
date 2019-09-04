@@ -1,5 +1,3 @@
-#include <iostream>
-
 class Tempo {
     private:
         int dia;

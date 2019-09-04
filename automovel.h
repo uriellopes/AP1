@@ -1,4 +1,3 @@
-#include <string>
 #include "tempo.h"
 
 class Automovel {
