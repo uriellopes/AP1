@@ -4,10 +4,10 @@
 
 int main() {
 
-    //Vector para armazenar as concessionarias
+    //Vector para armazenar as concessionárias
     std::vector<Concessionaria> concessionarias;
 
-    //Adicionar informacoes iniciais no codigo para testes
+    //Adicionar informações iniciais no código para testes
     addInfo(concessionarias);
 
     //Mostrar menu principal

@@ -1,26 +1,26 @@
 #include <iostream>
 #include "concessionaria.h"
 
-//Construtor de concessionaria
+//Construtor de concessionária
 Concessionaria::Concessionaria(std::string a, long long int b) {
     nome = a;
     cnpj = b;
     qtd_estoque = 0;
 }
 
-//Sobrecarga do operador << de concessionaria
+//Sobrecarga do operador << de concessionária
 std::ostream& operator<< (std::ostream &o, Concessionaria const c) {
     o << "Nome: " << c.nome << std::endl << "CNPJ: " << c.cnpj << std::endl << "Quantidade de carros no estoque: " << c.qtd_estoque << std::endl;
     return o;
 }
 
-//Funcao para adicionar carros na concessionaria
+//Função para adicionar carros na concessionária
 void Concessionaria::adicionarCarro( Automovel c) {
     carros.push_back(c);
     qtd_estoque++;
 }
 
-//Funcao para mostrar todos os carros de uma concessionaria
+//Função para mostrar todos os carros de uma concessionária
 void Concessionaria::showCarros() {    
     int j = 0;
     if( !carros.empty() ) {
@@ -56,7 +56,7 @@ long long int Concessionaria::getCNPJ() {
     return cnpj;
 }
 
-//Funcao para aumentar o preco em uma certa % de todos os carros
+//Função para aumentar o preço em uma certa % de todos os carros
 void Concessionaria::aumentarPreco(float value) {
     float percent = value/100;
     for(unsigned int i = 0; i < carros.size(); i++ ) {
@@ -64,6 +64,7 @@ void Concessionaria::aumentarPreco(float value) {
     }
 }
 
+//Função que lista os carros da concessionária que foram produzidos há menos de 90 dias
 void Concessionaria::listarCarrosRecentes() {
     time_t atual;
     time(&atual);
@@ -97,7 +98,7 @@ void Concessionaria::listarCarrosRecentes() {
     }
 }
 
-//Destrutor de concessionaria
+//Destrutor de concessionária
 Concessionaria::~Concessionaria() {
 
 }

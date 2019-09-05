@@ -7,19 +7,19 @@
 #define LIMPAR "clear"
 #endif
 
-//Funcao para limpar a tela
+//Função para limpar a tela
 void clear() {
     system(LIMPAR);
 }
 
-//Funcao para pressionar enter para continuar
+//Função para pressionar enter para continuar
 void pressToCont() {
     std::cout << "Pressione Enter para continuar...";
     std::cin.ignore();
     std::cin.ignore();
 }
 
-//Funcao para chegar se o input é um int
+//Função para checar se o input é um int
 bool checarDigito(std::string &input) {
     for (unsigned int  i = 0; i < input.size(); i++) {
         if( !isdigit(input[i]) ) {
@@ -30,7 +30,7 @@ bool checarDigito(std::string &input) {
     return true;
 }
 
-//Funcao para chegar se o input é um float
+//Função para chegar se o input é um float
 bool checarFloat(std::string &input) {
     int ponto = 0;
     for (unsigned int  i = 0; i < input.size(); i++) {
@@ -50,7 +50,7 @@ bool checarFloat(std::string &input) {
     }
 }
 
-//Funçao para checar se o ano inserido é bissexto
+//Função para checar se o ano inserido é bissexto
 bool checkBissexto(int &ano) {
     return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
 }
@@ -92,7 +92,7 @@ void addInfo(std::vector<Concessionaria> &concessionarias) {
     concessionarias[2].adicionarCarro(Automovel("BMW", 125400.50, "LLLLLLLLLL", Tempo(31, 3, 2017)));
 }
 
-//Funcao para criar uma nova concessionaria
+//Função para criar uma nova concessionaria
 void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
     clear();
     std::string nome;
@@ -147,7 +147,7 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
     pressToCont();
 }
 
-//Funcao que mostra o meno e recebe o valor para aumentar o preco dos carros de uma concessionaria
+//Função que mostra o menu e recebe o valor para aumentar o preço dos carros de uma concessionaria
 void menuAumentarPreco(Concessionaria &c) {
     bool inputValido;
     float valor;
@@ -181,7 +181,7 @@ void menuAumentarPreco(Concessionaria &c) {
     pressToCont();
 }
 
-//Funcao para selecionar uma concessionaria
+//Função para selecionar uma concessionaria
 void selecionarConcessionaria(Concessionaria &c) {
     std::string input;
     int escolha;
@@ -243,7 +243,7 @@ void selecionarConcessionaria(Concessionaria &c) {
     } while (!sair);
 }
 
-//Funcao que mostra o menu principal do codigo
+//Função que mostra o menu principal do código
 void showMenu(std::vector<Concessionaria> &concessionarias) {
     std::string input;
     int escolha;

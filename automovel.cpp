@@ -18,16 +18,17 @@ std::ostream& operator<< (std::ostream &o, Automovel const a) {
     return o;
 }
 
-//Getter do atributo preco
+//Getter do atributo preço
 void Automovel::setPreco(float value) {
     preco = value;
 }
 
-//Setter do atributo preco
+//Setter do atributo preço
 float Automovel::getPreco() {
     return preco;
 }
 
+//Função que chama o getter do atributo qtd_dias da classe de Tempo
 int Automovel::getQtdDias() {
     return data_criacao.getQtdDias();
 }

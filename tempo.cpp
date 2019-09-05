@@ -6,7 +6,7 @@ void diasPorAno(int &ano, int &qtd) {
     qtd += (ano - 1) * 365;
 }
 
-//Função para calcular a quantidade de dias para cada mes
+//Função para calcular a quantidade de dias para cada mês
 void diasPorMes(int &mes, int &qtd) {
     int meses[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     for(int i = 1; i < mes; i++) {
@@ -19,7 +19,7 @@ int qtdBissexto(int &ano) {
     return ((ano - 1) / 4) - ((ano - 1) / 100) + ((ano - 1) / 400);
 }
 
-// //Função para checar se o ano atual é bissexto
+//Função para checar se o ano atual é bissexto
 bool checarBissexto(int &ano) {
     return (ano % 4 == 0) && (ano % 100 != 0 || ano % 400 == 0);
 }
