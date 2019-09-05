@@ -8,5 +8,6 @@ class Tempo {
         Tempo();
         Tempo(int dia, int mes, int ano);
         friend std::ostream& operator<< (std::ostream &o, Tempo const t);
+        int getQtdDias();
         ~Tempo();
 };

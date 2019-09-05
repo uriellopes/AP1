@@ -60,6 +60,11 @@ std::ostream& operator<< (std::ostream &o, Tempo const t) {
     return o;
 }
 
+//Getter do atributo qtd_dias
+int Tempo::getQtdDias() {
+    return qtd_dias;
+}
+
 //Destrutor da classe Tempo
 Tempo::~Tempo() {
     

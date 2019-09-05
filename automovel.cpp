@@ -28,6 +28,10 @@ float Automovel::getPreco() {
     return preco;
 }
 
+int Automovel::getQtdDias() {
+    return data_criacao.getQtdDias();
+}
+
 //Destrutor da Classe
 Automovel::~Automovel() {
 

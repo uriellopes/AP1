@@ -15,5 +15,6 @@ class Concessionaria {
         std::string getNome();
         long long int getCNPJ();
         void aumentarPreco(float value);
+        void listarCarrosRecentes();
         ~Concessionaria();
 };

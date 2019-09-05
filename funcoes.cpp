@@ -228,6 +228,9 @@ void selecionarConcessionaria(Concessionaria &c) {
                     menuAumentarPreco(c);
                     break;
                 case 4:
+                    clear();
+                    c.listarCarrosRecentes();
+                    pressToCont();
                     break;
                 default:
                     error = true;

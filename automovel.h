@@ -12,5 +12,6 @@ class Automovel {
         friend std::ostream& operator<< (std::ostream &o, Automovel const a);
         void setPreco(float value);
         float getPreco();
+        int getQtdDias();
         ~Automovel();
 };
