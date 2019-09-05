@@ -13,7 +13,5 @@ int main() {
     //Mostrar menu principal
     showMenu(concessionarias);
 
-    //adicionarNovoCarro(concessionarias[0]);
-
     return 0;
 }
