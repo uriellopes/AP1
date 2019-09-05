@@ -1,7 +1,11 @@
 #include <iostream>
 #include "funcoes.h"
 
+#ifdef _WIN32
 #define LIMPAR "CLS"
+#elif
+#define LIMPAR "clear"
+#endif
 
 //Funcao para limpar a tela
 void clear() {
