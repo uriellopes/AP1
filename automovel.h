@@ -13,5 +13,6 @@ class Automovel {
         void setPreco(float value);
         float getPreco();
         int getQtdDias();
+        std::string getChassi();
         ~Automovel();
 };

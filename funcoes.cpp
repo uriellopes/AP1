@@ -147,6 +147,130 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
     pressToCont();
 }
 
+
+//Função para adicionar um novo carro na concessionária
+void adicionarNovoCarro(Concessionaria &c) {
+    std::string chassi, marca, preco, dia, mes, ano;
+    bool error = false, dataErro = false, dataValida = false;
+
+    clear();
+    
+    std::cout << "##################################" << std::endl;
+    std::cout << "##   1 - Adicionar novo carro   ##" << std::endl;
+    std::cout << "##################################" << std::endl << std::endl;
+
+    std::cout << "Digite o chassi do carro: ";
+    std::cin >> chassi;
+    
+    if( c.checkSize() > 0 ) {
+        
+        if( c.verificarExiste(chassi) ) {
+            std::cout << "Já existe um carro cadastrado com esse chassi!!" << std::endl;
+        } else {
+            std::cout << "Digite a marca do carro: ";
+            std::cin >> marca;
+            do {
+                if( error) {
+                    std::cout << std::endl << "Digite apenas numeros float para um valor valido!!" << std::endl;
+                }
+                std::cout << "Digite o preco do carro (Digite apenas os numeros e com apenas um '.' para separar o decimal): ";
+                std::cin >> preco;
+                error = !checarFloat(preco);
+            } while( error );
+
+            do {
+                if( dataValida ) {
+                    std::cout << std::endl << "Digite um valor de data valido!!" << std::endl;
+                }
+                do {
+                    if( dataErro) {
+                        std::cout << std::endl << "Digite um valor de dia valido!!" << std::endl;
+                    }
+                    std::cout << "Digite o dia da data de fabricacao do carro: ";
+                    std::cin >> dia;
+                    dataErro = !checarDigito(dia);
+                } while ( dataErro );
+
+                do {
+                    if( dataErro) {
+                        std::cout << std::endl << "Digite um valor de mes valido!!" << std::endl;
+                    }
+                    std::cout << "Digite o mes da data de fabricacao do carro: ";
+                    std::cin >> mes;
+                    dataErro = !checarDigito(mes);
+                } while ( dataErro );
+
+                do {
+                    if( dataErro) {
+                        std::cout << std::endl << "Digite um valor de ano valido!!" << std::endl;
+                    }
+                    std::cout << "Digite o ano da data de fabricacao do carro: ";
+                    std::cin >> ano;
+                    dataErro = !checarDigito(ano);
+                } while ( dataErro );
+
+                dataValida = !validarData(stoi(dia), stoi(mes), stoi(ano));
+
+            } while( dataValida );
+            
+            c.adicionarCarro(Automovel(marca, std::stof(preco), chassi, Tempo(stoi(dia), stoi(mes), stoi(ano))));
+            std::cout << "Carro cadastrado com sucesso!!!" << std::endl;
+        }
+
+    } else {
+        std::cout << "Digite a marca do carro: ";
+        std::cin >> marca;
+        do {
+            if( error) {
+                std::cout << std::endl << "Digite apenas numeros float para um valor valido!!" << std::endl;
+            }
+            std::cout << "Digite o preco do carro (Digite apenas os numeros e com apenas um '.' para separar o decimal): ";
+            std::cin >> preco;
+            error = !checarFloat(preco);
+        } while( error );
+
+        do {
+            if( dataValida ) {
+                std::cout << std::endl << "Digite um valor de data valido!!" << std::endl;
+            }
+            do {
+                if( dataErro) {
+                    std::cout << std::endl << "Digite um valor de dia valido!!" << std::endl;
+                }
+                std::cout << "Digite o dia da data de fabricacao do carro: ";
+                std::cin >> dia;
+                dataErro = !checarDigito(dia);
+            } while ( dataErro );
+
+            do {
+                if( dataErro) {
+                    std::cout << std::endl << "Digite um valor de mes valido!!" << std::endl;
+                }
+                std::cout << "Digite o mes da data de fabricacao do carro: ";
+                std::cin >> mes;
+                dataErro = !checarDigito(mes);
+            } while ( dataErro );
+
+            do {
+                if( dataErro) {
+                    std::cout << std::endl << "Digite um valor de ano valido!!" << std::endl;
+                }
+                std::cout << "Digite o ano da data de fabricacao do carro: ";
+                std::cin >> ano;
+                dataErro = !checarDigito(ano);
+            } while ( dataErro );
+
+            dataValida = !validarData(stoi(dia), stoi(mes), stoi(ano));
+
+        } while( dataValida );
+            
+        c.adicionarCarro(Automovel(marca, std::stof(preco), chassi, Tempo(stoi(dia), stoi(mes), stoi(ano))));
+        std::cout << "Carro cadastrado com sucesso!!!" << std::endl;
+    }
+    
+    pressToCont();
+}
+
 //Função que mostra o menu e recebe o valor para aumentar o preço dos carros de uma concessionaria
 void menuAumentarPreco(Concessionaria &c) {
     bool inputValido;
@@ -218,6 +342,7 @@ void selecionarConcessionaria(Concessionaria &c) {
                     sair = true;
                     break;
                 case 1:
+                    adicionarNovoCarro(c);
                     break;
                 case 2:
                     clear();

@@ -98,6 +98,19 @@ void Concessionaria::listarCarrosRecentes() {
     }
 }
 
+int Concessionaria::checkSize() {
+    return carros.size();
+}
+
+bool Concessionaria::verificarExiste(std::string &chassi) {
+    for(unsigned int i = 0; i < carros.size(); i++ ) {
+        if( chassi.compare(carros[i].getChassi()) == 0 ) {
+            return true;
+        }
+    }
+    return false;
+}
+
 //Destrutor de concessionária
 Concessionaria::~Concessionaria() {
 

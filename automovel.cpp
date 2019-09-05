@@ -33,6 +33,10 @@ int Automovel::getQtdDias() {
     return data_criacao.getQtdDias();
 }
 
+std::string Automovel::getChassi() {
+    return chassi;
+}
+
 //Destrutor da Classe
 Automovel::~Automovel() {
 

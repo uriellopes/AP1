@@ -16,5 +16,7 @@ class Concessionaria {
         long long int getCNPJ();
         void aumentarPreco(float value);
         void listarCarrosRecentes();
+        int checkSize();
+        bool verificarExiste(std::string &chassi);
         ~Concessionaria();
 };
