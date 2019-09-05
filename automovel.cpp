@@ -18,6 +18,16 @@ std::ostream& operator<< (std::ostream &o, Automovel const a) {
     return o;
 }
 
+//Getter do atributo preco
+void Automovel::setPreco(float value) {
+    preco = value;
+}
+
+//Setter do atributo preco
+float Automovel::getPreco() {
+    return preco;
+}
+
 //Destrutor da Classe
 Automovel::~Automovel() {
 

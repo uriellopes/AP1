@@ -13,7 +13,5 @@ int main() {
     //Mostrar menu principal
     showMenu(concessionarias);
 
-    //concessionarias[0].showCarros();
-
     return 0;
 }

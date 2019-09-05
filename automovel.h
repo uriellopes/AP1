@@ -10,5 +10,7 @@ class Automovel {
     public:
         Automovel(std::string m, float p, std::string c, Tempo d);
         friend std::ostream& operator<< (std::ostream &o, Automovel const a);
+        void setPreco(float value);
+        float getPreco();
         ~Automovel();
 };

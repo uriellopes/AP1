@@ -15,6 +15,7 @@ void pressToCont() {
     std::cin.ignore();
 }
 
+//Funcao para chegar se o input é um int
 bool checarDigito(std::string &input) {
     for (unsigned int  i = 0; i < input.size(); i++) {
         if( !isdigit(input[i]) ) {
@@ -23,6 +24,26 @@ bool checarDigito(std::string &input) {
         }
     }
     return true;
+}
+
+//Funcao para chegar se o input é um float
+bool checarFloat(std::string &input) {
+    int ponto = 0;
+    for (unsigned int  i = 0; i < input.size(); i++) {
+        if( !isdigit(input[i]) ) {
+            if( input[i] != '.') {
+                return false;
+            } else {
+                ponto++;
+            }
+        }
+    }
+
+    if( ponto < 2 ) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 //Funçao para checar se o ano inserido é bissexto
@@ -69,16 +90,16 @@ void addInfo(std::vector<Concessionaria> &concessionarias) {
 
 //Funcao para criar uma nova concessionaria
 void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
-    //clear();
+    clear();
     std::string nome;
     std::string input;
     long long int cnpj;
     bool existe = false;
     bool inputValido;
 
-    std::cout << std::endl << "=======================================" << std::endl;
-    std::cout << "     1 - Criar nova concessionaria" << std::endl;
-    std::cout << "=======================================" << std::endl << std::endl;
+    std::cout << std::endl << "#######################################" << std::endl;
+    std::cout << "##   1 - Criar nova concessionaria   ##" << std::endl;
+    std::cout << "#######################################" << std::endl << std::endl;
 
     std::cout << "Digite o nome da nova concessionaria: ";
     std::cin.ignore();
@@ -122,6 +143,40 @@ void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
     pressToCont();
 }
 
+//Funcao que mostra o meno e recebe o valor para aumentar o preco dos carros de uma concessionaria
+void menuAumentarPreco(Concessionaria &c) {
+    bool inputValido;
+    float valor;
+    std::string input;
+
+    clear();
+    std::cout << "####################################################" << std::endl;
+    std::cout << "##   3 - Aumentar preco de todos os carros em %   ##" << std::endl;
+    std::cout << "####################################################" << std::endl << std::endl;
+
+    do {
+        inputValido = true;
+        std::cout << "Digite o valor da % desejado ( Digite apenas os numeros e com apenas um '.' para separar o decimal ): ";
+        std::cin >> input;
+
+        inputValido = checarFloat(input);
+
+        if( !inputValido ) {
+            std::cout << std::endl;
+            std::cout << "Digite apenas numeros float para um valor valido!!" << std::endl;
+        }        
+
+    } while ( !inputValido );
+
+    valor = std::stof( input );
+
+    c.aumentarPreco(valor);
+
+    std::cout << "Preco de todos os carros aumentado em: " << valor << "%" << std::endl;
+
+    pressToCont();
+}
+
 //Funcao para selecionar uma concessionaria
 void selecionarConcessionaria(Concessionaria &c) {
     std::string input;
@@ -161,10 +216,12 @@ void selecionarConcessionaria(Concessionaria &c) {
                 case 1:
                     break;
                 case 2:
+                    clear();
                     c.showCarros();
                     pressToCont();
                     break;
                 case 3:
+                    menuAumentarPreco(c);
                     break;
                 case 4:
                     break;
