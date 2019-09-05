@@ -56,7 +56,7 @@ Tempo::Tempo(int d, int m, int a) {
 
 //Sobrecarga do opperador <<
 std::ostream& operator<< (std::ostream &o, Tempo const t) {
-    o << t.dia << "/" << t.mes << "/" << t.ano << std::endl;
+    o << t.dia << "/" << t.mes << "/" << t.ano;
     return o;
 }
 

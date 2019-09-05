@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include "automovel.h"
 
 //Contrutor da Classe
@@ -12,7 +11,10 @@ Automovel::Automovel(std::string m, float p, std::string c, Tempo d) {
 
 //Sobrecarga do operador <<
 std::ostream& operator<< (std::ostream &o, Automovel const a) {
-    o << "Marca: " << a.marca << std::endl << "Preco: " <<  std::fixed << std::setprecision(2) << a.preco << std::endl << "Chassi: " << a.chassi << std::endl << "Data de criacao: " << a.data_criacao << std::endl;
+    o << std::setw(13) << a.marca << std::setw(7) << "|" 
+    << std::setw(13) << std::fixed << std::setprecision(2) << a.preco << std::setw(7) << "|"
+    << std::setw(15) << a.chassi << std::setw(5) << "|" 
+    << std::setw(5) << a.data_criacao;
     return o;
 }
 

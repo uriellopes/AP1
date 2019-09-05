@@ -69,14 +69,14 @@ void addInfo(std::vector<Concessionaria> &concessionarias) {
 
 //Funcao para criar uma nova concessionaria
 void novaConcessionaria(std::vector<Concessionaria> &concessionarias) {
-    clear();
+    //clear();
     std::string nome;
     std::string input;
     long long int cnpj;
     bool existe = false;
     bool inputValido;
 
-    std::cout << "=======================================" << std::endl;
+    std::cout << std::endl << "=======================================" << std::endl;
     std::cout << "     1 - Criar nova concessionaria" << std::endl;
     std::cout << "=======================================" << std::endl << std::endl;
 
@@ -130,10 +130,9 @@ void selecionarConcessionaria(Concessionaria &c) {
     bool error = false;
     do {
         clear();
-
-        std::cout << "===================================" << std::endl;
-        std::cout << c;
-        std::cout << "===================================" << std::endl << std::endl;
+        std::cout << std::endl << "###################################" << std::endl;
+        std::cout <<  c;
+        std::cout << "###################################" << std::endl << std::endl;
 
         std::cout << "Escolha uma das seguintes opcoes: " << std::endl << std::endl;
 
@@ -154,7 +153,7 @@ void selecionarConcessionaria(Concessionaria &c) {
 
         if( checarDigito(input)) {
             escolha = std::stoi (input, nullptr);
-            
+
             switch (escolha) {
                 case 0:
                     sair = true;
@@ -162,6 +161,8 @@ void selecionarConcessionaria(Concessionaria &c) {
                 case 1:
                     break;
                 case 2:
+                    c.showCarros();
+                    pressToCont();
                     break;
                 case 3:
                     break;
@@ -187,7 +188,10 @@ void showMenu(std::vector<Concessionaria> &concessionarias) {
 
     do {
         clear();
-        std::cout << "Escolha uma das seguintes opcoes: " << std::endl << std::endl;
+        std::cout << std::endl << "############################################################" << std::endl;
+        std::cout << "###                      BEM VINDO!!                     ###" << std::endl;
+        std::cout << "############################################################" << std::endl;
+        std::cout << std::endl << "Escolha uma das seguintes opcoes: " << std::endl << std::endl;
         std::cout << "[1] - Criar nova Concessionaria" << std::endl;
         int opcoes = 1;
         for(unsigned int i = 0; i < concessionarias.size(); i++ ) {
