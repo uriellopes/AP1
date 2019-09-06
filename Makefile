@@ -6,6 +6,9 @@ FILE_OBJ = obj/
 FILE_INC = includes/
 FILE_CPP = cpp/
 
+#verifica se a pasta obj existe
+MKDIR = $(shell test ! -d obj && echo mkdir obj)
+
 #compilador
 CC = g++
 
@@ -18,7 +21,10 @@ OBJ_FLAG = -c -o $@ $<
 #.o para criar o executavel
 OBJS = $(FILE_OBJ)main.o $(FILE_OBJ)funcoes.o $(FILE_OBJ)concessionaria.o $(FILE_OBJ)automovel.o $(FILE_OBJ)tempo.o
 
-all: $(PROJ)
+all: create $(PROJ)
+
+create:
+	$(MKDIR)
 
 $(PROJ): $(OBJS)
 	$(CC) $(FLAGS) -o $@ $(OBJS)
@@ -42,4 +48,4 @@ run:
 	./$(PROJ)
 
 clean:
-	rm -rf obj/*.o exec
+	rm -rf $(FILE_OBJ)*.o $(PROJ)
