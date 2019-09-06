@@ -3,7 +3,7 @@
 
 #ifdef _WIN32
 #define LIMPAR "CLS"
-#elif
+#else
 #define LIMPAR "clear"
 #endif
 

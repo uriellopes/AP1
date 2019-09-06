@@ -1,4 +1,4 @@
-//g++ -Wall -pedantic -g -O0 -o exec main.cpp concessionaria.cpp automovel.cpp tempo.cpp
+//g++ -std=c++11 -Wall -pedantic -g -O0 -o exec main.cpp funcoes.cpp concessionaria.cpp automovel.cpp tempo.cpp
 #include <iostream>
 #include "funcoes.h"
 
