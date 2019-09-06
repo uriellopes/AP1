@@ -1,61 +1,45 @@
-all: do
+#Nome do executavel
+PROJ = exec
 
-do: main.o funcoes.o concessionaria.o automovel.o tempo.o
-	g++ -std=c++11 -Wall -pedantic -g -O0 -o exec main.o funcoes.o concessionaria.o automovel.o tempo.o
+#arquivos dos .o .h e .cpp
+FILE_OBJ = obj/
+FILE_INC = includes/
+FILE_CPP = cpp/
 
-main.o: cpp/main.cpp includes/funcoes.h
-	g++ -std=c++11 -Wall -pedantic -g -O0 -c cpp/main.cpp
+#compilador
+CC = g++
 
-funcoes.o: cpp/funcoes.cpp includes/funcoes.h
-	g++ -std=c++11 -Wall -pedantic -g -O0 -c cpp/funcoes.cpp
+#flags
+FLAGS = -std=c++11 -Wall -pedantic -g -O0
 
-concessionaria.o: cpp/concessionaria.cpp includes/concessionaria.h
-	g++ -std=c++11 -Wall -pedantic -g -O0 -c cpp/concessionaria.cpp
+#flags dos .o
+OBJ_FLAG = -c -o $@ $<
 
-automovel.o: cpp/automovel.cpp includes/automovel.h
-	g++ -std=c++11 -Wall -pedantic -g -O0 -c cpp/automovel.cpp
+#.o para criar o executavel
+OBJS = $(FILE_OBJ)main.o $(FILE_OBJ)funcoes.o $(FILE_OBJ)concessionaria.o $(FILE_OBJ)automovel.o $(FILE_OBJ)tempo.o
 
-tempo.o: cpp/tempo.cpp includes/tempo.h
-	g++ -std=c++11 -Wall -pedantic -g -O0 -c cpp/tempo.cpp
+all: $(PROJ)
+
+$(PROJ): $(OBJS)
+	$(CC) $(FLAGS) -o $@ $(OBJS)
+
+$(FILE_OBJ)main.o: $(FILE_CPP)main.cpp $(FILE_INC)funcoes.h
+	$(CC) $(FLAGS) $(OBJ_FLAG)
+
+$(FILE_OBJ)funcoes.o:$(FILE_CPP)funcoes.cpp $(FILE_INC)funcoes.h
+	$(CC) $(FLAGS) $(OBJ_FLAG)
+
+$(FILE_OBJ)concessionaria.o: $(FILE_CPP)concessionaria.cpp $(FILE_INC)concessionaria.h
+	$(CC) $(FLAGS) $(OBJ_FLAG)
+
+$(FILE_OBJ)automovel.o: $(FILE_CPP)automovel.cpp $(FILE_INC)automovel.h
+	$(CC) $(FLAGS) $(OBJ_FLAG)
+
+$(FILE_OBJ)tempo.o: $(FILE_CPP)tempo.cpp $(FILE_INC)tempo.h
+	$(CC) $(FLAGS) $(OBJ_FLAG)
+
+run:
+	./$(PROJ)
 
 clean:
-	rm -rf *.o exec
-
-# # my first good makefile
-
-# # name of the project
-# PROJ_NAME=exec
-
-# # .cpp files
-# CPP_SOURCE=$(wildcard *.cpp)
-
-# # .h files
-# H_SOURCE=$(wildcard *.h)
-
-# # Object files
-# OBJ=$(CPP_SOURCE: .c=.o)
-
-# # Compiler
-# CC=g++
-
-# # Flags for compiler
-# CPP_FLAGS= -W -Wall -pedantic -std=c++11 -c
-
-# #
-# #  Compilation and linking
-# #
-
-# all: $(PROJ_NAME)
-
-# $(PROJ_NAME): $(OBJ)
-# 	$(CC) -o $@ $^
-
-# %.o: %.cpp %.h
-# 	$(CC) -o $@ $< $(CPP_FLAGS)
-
-# main.o: main.cpp $(H_SOURCE)
-# 	$(CC) -o $@ $< $(CPP_FLAGS)
-
-# clean:
-# 	rm -rf *.o $(PROJ_NAME)
-
+	rm -rf obj/*.o exec
