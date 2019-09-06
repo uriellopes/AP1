@@ -1,5 +1,5 @@
 #include <iostream>
-#include "funcoes.h"
+#include "../includes/funcoes.h"
 
 #ifdef _WIN32
 #define LIMPAR "CLS"

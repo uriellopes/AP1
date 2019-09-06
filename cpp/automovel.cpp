@@ -1,5 +1,5 @@
 #include <iostream>
-#include "automovel.h"
+#include "../includes/automovel.h"
 
 //Contrutor da Classe
 Automovel::Automovel(std::string m, float p, std::string c, Tempo d) {
