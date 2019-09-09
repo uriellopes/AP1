@@ -19,8 +19,8 @@ Dupla:  Uriel Lira Lopes - 2016045704
 
     1. Ao selecionar "Criar nova concessionária"
     Ao selecionar criar nova concessionária aparece mensagens de texto pedindo as informações necessária para cadastrar-la ( Questão B da AP1 ).
-    OBS: Caso ja exista uma concessionária de mesmo nome ou de msm CNPJ aparecerá uma mensagem de erro e retornará ao menu inicial.
-    OBS2: O CNPJ só aceita valores inteiros, caso outro tipo de valor seja digitado aparecerá uma mensagem de error.
+OBS: Caso ja exista uma concessionária de mesmo nome ou de msm CNPJ aparecerá uma mensagem de erro e retornará ao menu inicial.
+OBS2: O CNPJ só aceita valores inteiros, caso outro tipo de valor seja digitado aparecerá uma mensagem de error.
 
     2. Ao selecionar "Listar a média de carros por concessionária" aparecerá uma mensagem mostrando o valor da média e retornará ao menu inicial.
 
