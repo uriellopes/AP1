@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "../includes/funcoes.h"
 
 #ifdef _WIN32
