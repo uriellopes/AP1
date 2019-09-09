@@ -6,9 +6,9 @@ Dupla:  Uriel Lira Lopes - 2016045704
         Gustavo Batista de Araújo Gorgônio - 2016045689
 
 ## Instruções
-1 - Para compilar o programa basta digitar make no terminal;
-2 - Para rodar o programa basta digitar make run no terminal;
-3 - Para remover os arquivos .o e o executavel basta digitar make clean no terminal.
+1. Para compilar o programa basta digitar make no terminal;
+2. Para rodar o programa basta digitar make run no terminal;
+3. Para remover os arquivos .o e o executavel basta digitar make clean no terminal.
 
 ## Funcionalidades
 1 - Ao rodar o programa será mostrado um menu inicial com as seguintes opções:
