@@ -5,12 +5,12 @@ Turma:  IMD0030 - Linguagem de Programação I - T02
 Dupla:  Uriel Lira Lopes - 2016045704
         Gustavo Batista de Araújo Gorgônio - 2016045689
 
-##Instruções
+**Instruções**
 1 - Para compilar o programa basta digitar make no terminal;
 2 - Para rodar o programa basta digitar make run no terminal;
 3 - Para remover os arquivos .o e o executavel basta digitar make clean no terminal.
 
-##Funcionalidades
+**Funcionalidades**
 1 - Ao rodar o programa será mostrado um menu inicial com as seguintes opções:
     (a) - Criar uma nova concessionária ( Questão C da AP1 );
     (b) - Listar a média de carros por concessionária ( Questão H da AP1 );
