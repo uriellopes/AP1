@@ -12,9 +12,9 @@ Dupla:  Uriel Lira Lopes - 2016045704
 
 ## Funcionalidades
 1 - Ao rodar o programa será mostrado um menu inicial com as seguintes opções:
-    (a) - Criar uma nova concessionária ( Questão C da AP1 );
-    (b) - Listar a média de carros por concessionária ( Questão H da AP1 );
-    (c) - Selecionar alguma das concessionárias cadastradas.
+    - Criar uma nova concessionária ( Questão C da AP1 );
+    - Listar a média de carros por concessionária ( Questão H da AP1 );
+    - Selecionar alguma das concessionárias cadastradas.
     OBS: O programa irá verificar o input do usuário é um digito e se é uma das opções, caso seja falso aparecerá uma mensagem de erro.
 
 1.2 - Ao selecionar "Criar nova concessionária"
