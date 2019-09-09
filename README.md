@@ -6,25 +6,25 @@ Dupla:  Uriel Lira Lopes - 2016045704
         Gustavo Batista de Araújo Gorgônio - 2016045689
 
 ## Instruções
-1. Para compilar o programa basta digitar make no terminal;
-2. Para rodar o programa basta digitar make run no terminal;
-3. Para remover os arquivos .o e o executavel basta digitar make clean no terminal.
+**1.** Para compilar o programa basta digitar make no terminal;
+**2.** Para rodar o programa basta digitar make run no terminal;
+**3.** Para remover os arquivos .o e o executavel basta digitar make clean no terminal.
 
 ## Funcionalidades
-1. Ao rodar o programa será mostrado um menu inicial com as seguintes opções:
+**1.** Ao rodar o programa será mostrado um menu inicial com as seguintes opções:
     - Criar uma nova concessionária ( Questão C da AP1 );
     - Listar a média de carros por concessionária ( Questão H da AP1 );
     - Selecionar alguma das concessionárias cadastradas.
     OBS: O programa irá verificar o input do usuário é um digito e se é uma das opções, caso seja falso aparecerá uma mensagem de erro.
 
-2. Ao selecionar "Criar nova concessionária"
+**2.** Ao selecionar "Criar nova concessionária"
     Ao selecionar criar nova concessionária aparece mensagens de texto pedindo as informações necessária para cadastrar-la ( Questão B da AP1 ).
     OBS: Caso ja exista uma concessionária de mesmo nome ou de msm CNPJ aparecerá uma mensagem de erro e retornará ao menu inicial.
     OBS2: O CNPJ só aceita valores inteiros, caso outro tipo de valor seja digitado aparecerá uma mensagem de error.
 
-3. Ao selecionar "Listar a média de carros por concessionária" aparecerá uma mensagem mostrando o valor da média e retornará ao menu inicial.
+**3.** Ao selecionar "Listar a média de carros por concessionária" aparecerá uma mensagem mostrando o valor da média e retornará ao menu inicial.
 
-4. Ao seleciar alguma das concessionárias cadastradas aparecerá as informações dessa concessionária e um menu referente a ela com as seguintes opções:
+**4.** Ao seleciar alguma das concessionárias cadastradas aparecerá as informações dessa concessionária e um menu referente a ela com as seguintes opções:
     - Adicionar novo carro ( Questão D da AP1 );
     - Listar carros cadastrados ( Questão E da AP1 );
     - Aumentar o preço de todos os carros em % ( Questão F da AP1 );
