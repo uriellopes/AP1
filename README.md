@@ -25,10 +25,10 @@ Dupla:  Uriel Lira Lopes - 2016045704
     2. Ao selecionar "Listar a média de carros por concessionária" aparecerá uma mensagem mostrando o valor da média e retornará ao menu inicial.
 
     3. Ao seleciar alguma das concessionárias cadastradas aparecerá as informações dessa concessionária e um menu referente a ela com as seguintes opções:
-    - Adicionar novo carro ( Questão D da AP1 );
-    - Listar carros cadastrados ( Questão E da AP1 );
-    - Aumentar o preço de todos os carros em % ( Questão F da AP1 );
-    - Listar carros produzidos há menos de 90 dias (Questão G da AP1 ).
+        - Adicionar novo carro ( Questão D da AP1 );
+        - Listar carros cadastrados ( Questão E da AP1 );
+        - Aumentar o preço de todos os carros em % ( Questão F da AP1 );
+        - Listar carros produzidos há menos de 90 dias (Questão G da AP1 ).
 
         1. Ao selecionar "Adicionar novo carro" aparecerá mensagens de texto pedindo as informações necessária para adicionar o carro ( Questão A da AP1 ).
         OBS: Caso já exista um carro de mesmo chassi cadastrado, aparecerá uma mensagem de erro e retornará para o menu da concessionária.
