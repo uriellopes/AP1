@@ -2,6 +2,10 @@
 #include <iostream>
 #include "../includes/funcoes.h"
 
+//Inicializar atributos estaticos das classes
+int Concessionaria::qtd_concessionaria = 0;
+int Automovel::qtd_carros = 0;
+
 int main() {
 
     //Vector para armazenar as concessionárias

@@ -1,12 +1,18 @@
 #include <iostream>
 #include "../includes/automovel.h"
 
+//Getter do atributo estatico de Automoveis
+int Automovel::getQtdCarros() {
+    return qtd_carros;
+}
+
 //Contrutor da Classe
 Automovel::Automovel(std::string m, float p, std::string c, Tempo d) {
     marca = m;
     preco = p;
     chassi = c;
     data_criacao = d;
+    qtd_carros++;
 }
 
 //Sobrecarga do operador <<

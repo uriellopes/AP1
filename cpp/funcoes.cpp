@@ -7,6 +7,9 @@
 #define LIMPAR "clear"
 #endif
 
+// int Concessionaria::qtd_concessionaria = 0;
+// int Automovel::qtd_carros = 0;
+
 //Função para limpar a tela
 void clear() {
     system(LIMPAR);
@@ -376,9 +379,10 @@ void showMenu(std::vector<Concessionaria> &concessionarias) {
         std::cout << "############################################################" << std::endl;
         std::cout << std::endl << "Escolha uma das seguintes opcoes: " << std::endl << std::endl;
         std::cout << "[1] - Criar nova Concessionaria" << std::endl;
-        int opcoes = 1;
+        std::cout << "[2] - Listar media de carros por concessionaria" << std::endl;
+        int opcoes = 2;
         for (unsigned int i = 0; i < concessionarias.size(); i++) {
-            std::cout << "[" << i + 2 << "] - Selecionar Concessionaria " << concessionarias[i].getNome() << std::endl;
+            std::cout << "[" << i + 3 << "] - Selecionar Concessionaria " << concessionarias[i].getNome() << std::endl;
             opcoes++;
         }
 
@@ -403,8 +407,13 @@ void showMenu(std::vector<Concessionaria> &concessionarias) {
                 case 1:
                     novaConcessionaria(concessionarias);
                     break;
+                case 2:
+                    clear();
+                    std::cout << "A media de carros por concessionaria e de aproximadamente " << Automovel::getQtdCarros()/Concessionaria::getQtdConcessionaria() << " carros por concessionaria!!" << std::endl;
+                    pressToCont();
+                    break;
                 default:
-                    selecionarConcessionaria(concessionarias[escolha - 2]);
+                    selecionarConcessionaria(concessionarias[escolha - 3]);
                     break;
                 }
             } else {

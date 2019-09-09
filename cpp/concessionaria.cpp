@@ -1,11 +1,17 @@
 #include <iostream>
 #include "../includes/concessionaria.h"
 
+//Getter do atributo estatico de concessionaria
+int Concessionaria::getQtdConcessionaria() {
+    return qtd_concessionaria;
+}
+
 //Construtor de concessionária
 Concessionaria::Concessionaria(std::string a, long long int b) {
     nome = a;
     cnpj = b;
     qtd_estoque = 0;
+    qtd_concessionaria++;
 }
 
 //Sobrecarga do operador << de concessionária
