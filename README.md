@@ -30,7 +30,7 @@ Dupla:  Uriel Lira Lopes - 2016045704
         - Aumentar o preço de todos os carros em % ( Questão F da AP1 );
         - Listar carros produzidos há menos de 90 dias (Questão G da AP1 ).
 
-        1. Ao selecionar "Adicionar novo carro" aparecerá mensagens de texto pedindo as informações necessária para adicionar o carro ( Questão A da AP1 ).
+        1. Ao selecionar "Adicionar novo carro" aparecerá mensagens de texto pedindo as informações necessária para adicionar o carro ( Questão A da AP1 ).  
         **OBS:** Caso já exista um carro de mesmo chassi cadastrado, aparecerá uma mensagem de erro e retornará para o menu da concessionária.  
         **OBS2:** O preço do carro so aceita valores inteiros ou float, seperando as casas decimais por um ponto("."), caso outro valor seja digitado aparecerá uma mensagem de erro.  
         **OBS3:** A data de fabricação devera ser uma data válida e separando dia, mês e ano por uma barra("/"), do tipo dd/mm/aaaa, caso outro valor seja digitado aparecerá uma mensagem de erro.
