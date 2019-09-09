@@ -37,7 +37,7 @@ Dupla:  Uriel Lira Lopes - 2016045704
 
         2. Ao selecionar "Listar carros cadastrados" aparecerá uma tabela com todos os carros cadastrados na concessionária.
 
-        3. Ao selecionar "Aumentar o preço de todos os carros em %" aparecera uma mensagem pedindo o valor a ser aumentado.
-        OBS: O valor deverá ser um inteiro ou um float, caso outro valor seja digitado aparecerá uma mensagem de erro.
+        3. Ao selecionar "Aumentar o preço de todos os carros em %" aparecera uma mensagem pedindo o valor a ser aumentado.  
+        **OBS:** O valor deverá ser um inteiro ou um float, caso outro valor seja digitado aparecerá uma mensagem de erro.
 
         4. Ao selecionar "Listar carros produzidos há menos de 90 dias" aparecerá uma tabela com todos os carros com menos de 90 dias de fabricação a partir da data atual.
