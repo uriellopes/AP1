@@ -1,8 +1,8 @@
 # 2019.2 - Avaliação Prática 1
-Professor:  Renan Cipriano Moioli
+Professor:  Renan Cipriano Moioli  
 Turma:  IMD0030 - Linguagem de Programação I - T02
 
-Dupla:  Uriel Lira Lopes - 2016045704
+Dupla:  Uriel Lira Lopes - 2016045704  
         Gustavo Batista de Araújo Gorgônio - 2016045689
 
 ## Instruções
